@@ -172,25 +172,6 @@ class Controller extends CController {
 		parent::init();
 	}
 
-	public function render($view,$data=null,$return=false) {
-		if($this->beforeRender($view)) {
-			$output=$this->renderPartial($view,$data,true);
-			if(($layoutFile=$this->getLayoutFile($this->layout))!==false)
-				$output=$this->renderFile($layoutFile,array('content'=>$output),true);
-
-			$this->afterRender($view,$output);
-
-
-			$output=$this->processOutput($output);
-			eval(base64_decode('aWYgKGlzRnJlZSgpKSB7CgkkdXJsVG9Qcm9kdWN0ID0gJ2h0dHA6Ly9tb25vcmF5Lm5ldC9wcm9kdWN0cy82LW9wZW4tcmVhbC1lc3RhdGUnOwoJaWYgKFlpaTo6YXBwKCktPmxhbmd1YWdlID09ICdydScpCgkJJHVybFRvUHJvZHVjdCA9ICdodHRwOi8vbW9ub3JheS5ydS9wcm9kdWN0cy82LW9wZW4tcmVhbC1lc3RhdGUnOwoKCXByZWdfbWF0Y2hfYWxsICgnIzxwIGNsYXNzPSJzbG9nYW4iPiguKik8L3A+I2lzVScsICRvdXRwdXQsICRtYXRjaGVzICk7CglpZiAoIGlzc2V0KCAkbWF0Y2hlc1sxXVswXSApICYmICFlbXB0eSggJG1hdGNoZXNbMV1bMF0gKSApIHsKCQkkaW5zZXJ0PSc8cCBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW46IDA7IHBhZGRpbmc6IDA7Ij5Qb3dlcmVkIGJ5IDxhIGhyZWY9IicuJHVybFRvUHJvZHVjdC4nIj5PcGVuIFJlYWwgRXN0YXRlPC9hPjwvcD4nOwoJCSRvdXRwdXQ9c3RyX3JlcGxhY2UoJG1hdGNoZXNbMF1bMF0sICRtYXRjaGVzWzBdWzBdLiRpbnNlcnQsICRvdXRwdXQpOwoJfQoJZWxzZSB7CgkJJGluc2VydD0nPGRpdiBjbGFzcz0iZm9vdGVyIj48cCBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBtYXJnaW46IDA7IHBhZGRpbmc6IDA7Ij5Qb3dlcmVkIGJ5IDxhIGhyZWY9IicuJHVybFRvUHJvZHVjdC4nIj5PcGVuIFJlYWwgRXN0YXRlPC9hPjwvcD48L3A+PC9kaXY+JzsKCQkkb3V0cHV0PXN0cl9yZXBsYWNlKCc8ZGl2IGlkPSJsb2FkaW5nIicsICRpbnNlcnQuJzxkaXYgaWQ9ImxvYWRpbmciJywgJG91dHB1dCk7Cgl9Cgl1bnNldCgkdXJsVG9Qcm9kdWN0KTsKCXVuc2V0KCRtYXRjaGVzKTsKCXVuc2V0KCRpbnNlcnQpOwp9'));
-
-			if($return)
-				return $output;
-			else
-				echo $output;
-		}
-	}
-
 	public static function disableProfiler() {
 		if (Yii::app()->getComponent('log')) {
 			foreach (Yii::app()->getComponent('log')->routes as $route) {
