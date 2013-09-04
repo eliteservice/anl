@@ -50,6 +50,7 @@ div.menu_item a:hover { color: #7f7467; text-decoration: underline; }
 	color: #852432;
 	border-top: 1px solid #fef6ee;
 	border-bottom: 1px solid #ebd0b4;
+    margin-top:40px;
 }
 
 /* ie7 hack */
@@ -93,7 +94,7 @@ a#more-options-link, a#more-options-link :hover { float: left; color: #FFFFFF !i
 
 /* Header */
 
-div.logo	{padding: 0px 0 0 0px; float:left;}
+div.logo	{position:absolute; margin-left:20px; padding: 0px 0 0 0px; float:left;}
 div.content	{float:left; width:960px;}
 .clear { clear: both; }
 div.searchform-back	{width:100%;}

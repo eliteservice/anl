@@ -7,7 +7,7 @@
       'class' => 'CDbConnection',
       'connectionString' => 'mysql:host=localhost;dbname=v_10634_estate_base;port=3306',
       'username' => 'v_10634_estate',
-      'password' => 'HFnnm849hhf2K39Jfhvepq',
+      'password' => '1cqylBRYHFnnm849',
       'emulatePrepare' => true,
       'charset' => 'utf8',
       'enableParamLogging' => false,

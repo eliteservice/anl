@@ -227,6 +227,7 @@ class Notifier {
 		if(isset($this->_userRules[$eventName]) && $user){
 			$active = isset($this->_userRules[$eventName]['active']) ? $this->_userRules[$eventName]['active'] : 0;
 			if($active){
+				sleep(1);
 				$this->_processEvent($this->_userRules[$eventName], $model, $user, false, $forceEmail);
 			}
 		}

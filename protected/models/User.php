@@ -66,7 +66,7 @@ class User extends ParentModel {
 			array('old_password', 'required', 'on' => 'changeAdminPass'),
 			array('balance', 'numerical', 'integerOnly' => true),
 
-			array('username, email, verifyCode, phone', 'required', 'on' => 'register'),
+			array('username, email, verifyCode', 'required', 'on' => 'register'), //, phone
 			array('verifyCode', 'captcha', 'on' => 'register'),
 			array('active', 'safe'),
 		);

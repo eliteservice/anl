@@ -184,6 +184,7 @@ class MainController extends ModuleUserController {
 				$criteria->addInCondition('t.loc_city', $city);
 			}
 		} else {
+            $this->selectedCity = 9;
 			$city = Yii::app()->request->getParam('city');
 			if($city) {
 				$this->selectedCity = $city;
